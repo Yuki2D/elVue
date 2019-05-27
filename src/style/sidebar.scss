@@ -1,0 +1,60 @@
+@import './variables.scss';
+#sidebar{
+    width: 180px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    >ul{
+        overflow-y: auto;
+        height: 100vh;
+    }
+    ul{
+        background: $menuBg;
+        .el-submenu__title{
+            color: $menuText;
+            cursor: pointer;
+            &:hover{
+                background: $menuHover;
+            }
+        }
+        .el-menu-item-group{
+            .el-menu-item-group__title{
+                padding: 0;
+            }
+            >ul{
+                .el-menu-item{
+                    a{
+                        display: inline-block;
+                        width: 100%;
+                        color: $menuText;
+                        padding-left: 20px;
+                    }
+                    background: $subMenuBg;
+                    span{
+                        margin-left: 20px;
+                    }
+                    &:hover{
+                        background: $subMenuHover; 
+                    }
+                    &.el-menu-item.is-active{
+                        color: $menuActiveText;
+                    }
+                }
+            }
+        }
+        .myindex{
+            a{
+                color: $menuText;
+                display: inline-block;
+                width: 100%;
+            }
+            background: $menuBg;
+            &:hover{
+                background: $menuHover;
+            }
+        }
+    }
+}
+#sidebar::-webkit-scrollbar{
+    display: none;
+}
